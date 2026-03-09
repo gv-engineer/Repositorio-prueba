@@ -1,0 +1,387 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Dark mode by default for seismic platform */
+:root {
+  --radius: 0.625rem;
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-foreground: #f8fafc;
+  --secondary: #334155;
+  --secondary-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #334155;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #3b82f6;
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #8b5cf6;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #3b82f6;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-foreground: #f8fafc;
+  --secondary: #334155;
+  --secondary-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #334155;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #3b82f6;
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #8b5cf6;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #3b82f6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet custom styles */
+.leaflet-container {
+  background: #0f172a !important;
+  font-family: var(--font-sans);
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leaflet-control-zoom a {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #334155 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4) !important;
+}
+
+.leaflet-popup-tip {
+  background: #1e293b !important;
+}
+
+.leaflet-popup-close-button {
+  color: #94a3b8 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #f8fafc !important;
+}
+
+/* Custom marker styles */
+.seismic-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.seismic-marker:hover {
+  transform: scale(1.2);
+  z-index: 1000 !important;
+}
+
+/* Magnitude color scale */
+.mag-0-2 { background: #10b981; }
+.mag-2-3 { background: #34d399; }
+.mag-3-4 { background: #6ee7b7; }
+.mag-4-5 { background: #fcd34d; }
+.mag-5-6 { background: #fbbf24; }
+.mag-6-7 { background: #f59e0b; }
+.mag-7-8 { background: #f97316; }
+.mag-8-plus { background: #ef4444; }
+
+/* Heatmap gradient override */
+.leaflet-heatmap-layer {
+  opacity: 0.7;
+}
+
+/* Cluster styles */
+.marker-cluster {
+  background: rgba(59, 130, 246, 0.4) !important;
+}
+
+.marker-cluster div {
+  background: rgba(59, 130, 246, 0.8) !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.marker-cluster-small {
+  background: rgba(16, 185, 129, 0.4) !important;
+}
+
+.marker-cluster-small div {
+  background: rgba(16, 185, 129, 0.8) !important;
+}
+
+.marker-cluster-medium {
+  background: rgba(245, 158, 11, 0.4) !important;
+}
+
+.marker-cluster-medium div {
+  background: rgba(245, 158, 11, 0.8) !important;
+}
+
+.marker-cluster-large {
+  background: rgba(239, 68, 68, 0.4) !important;
+}
+
+.marker-cluster-large div {
+  background: rgba(239, 68, 68, 0.8) !important;
+}
+
+/* Buffer zone styles */
+.buffer-zone {
+  fill-opacity: 0.3;
+  stroke-width: 2;
+}
+
+/* Panel animations */
+.panel-slide-enter {
+  transform: translateX(-100%);
+}
+
+.panel-slide-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.panel-slide-exit {
+  transform: translateX(0);
+}
+
+.panel-slide-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Story mode animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}
+
+.story-active-marker {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Loading spinner */
+@keyframes seismic-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+.loading-pulse {
+  animation: seismic-pulse 1.5s infinite;
+}
+
+/* Globe glow effect */
+.globe-glow {
+  position: relative;
+}
+
+.globe-glow::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Peru zone styles */
+.peru-zone-costa {
+  fill: rgba(239, 68, 68, 0.3);
+  stroke: #ef4444;
+}
+
+.peru-zone-sierra {
+  fill: rgba(245, 158, 11, 0.3);
+  stroke: #f59e0b;
+}
+
+.peru-zone-selva {
+  fill: rgba(16, 185, 129, 0.3);
+  stroke: #10b981;
+}
+
+/* Coulomb stress zones */
+.stress-increase {
+  fill: rgba(239, 68, 68, 0.4);
+  stroke: #ef4444;
+  stroke-width: 2;
+}
+
+.stress-decrease {
+  fill: rgba(16, 185, 129, 0.4);
+  stroke: #10b981;
+  stroke-width: 2;
+}
+
+/* Timeline styles */
+.timeline-marker {
+  transition: all 0.3s ease;
+}
+
+.timeline-marker:hover {
+  transform: scale(1.3);
+}
+
+/* D3 chart styles */
+.axis path,
+.axis line {
+  stroke: #475569;
+}
+
+.axis text {
+  fill: #94a3b8;
+}
+
+.grid line {
+  stroke: #334155;
+  stroke-opacity: 0.5;
+}
+
+/* Tooltip */
+.tooltip-seismic {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
